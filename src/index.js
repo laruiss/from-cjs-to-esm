@@ -1,6 +1,4 @@
-function add(a, b) {
-  return a + b;
-}
+const add = require('./utils/add.js')
 
 const result = add(1, 2)
 
