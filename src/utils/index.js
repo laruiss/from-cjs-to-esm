@@ -1,8 +1,7 @@
-module.exports = {
-  add(a, b) {
-    return a + b;
-  },
-  multiply(a, b) {
-    return a * b;
-  }
+export function add (a, b) {
+  return a + b
+}
+
+export function multiply (a, b) {
+  return a * b
 }

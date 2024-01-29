@@ -2,6 +2,7 @@
   "name": "from-cjs-to-esm",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "./src/index.js",
   "imports": {
     "#utils/*": "./src/utils/*"
