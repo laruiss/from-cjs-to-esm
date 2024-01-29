@@ -1,4 +1,4 @@
-const add = require('#utils/add.js')
+const { add } = require('#utils/index.js') // Affectation par décomposition
 
 const result = add(1, 2)
 
