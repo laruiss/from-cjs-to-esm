@@ -1,0 +1,81 @@
+{
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "npm-intellisense.importES6": true,
+  "npm-intellisense.importQuotes": "'",
+  "npm-intellisense.importLinebreak": "\n",
+  "npm-intellisense.importDeclarationType": "const",
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "html",
+    "less",
+    "markdown",
+    "postcss",
+    "sass",
+    "scss",
+    "source.css.styled",
+    "source.markdown.math",
+    "sugarss",
+    "vue",
+    "vue-html",
+    "vue-postcss",
+    "xml",
+    "xsl"
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[markdown]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[mdx]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[jsonc]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[json]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[vue]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ],
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml"
+  ]
+}

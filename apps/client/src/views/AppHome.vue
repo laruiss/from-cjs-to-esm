@@ -12,7 +12,7 @@ const result = add(1, 2)
   </p>
 
   <p>
-    <span class="fr-icon-ancient-gate-fill"></span> <!-- Exemple icône DSFR -->
+    <span class="fr-icon-ancient-gate-fill" /> <!-- Exemple icône DSFR -->
   </p>
 
   <p>

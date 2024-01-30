@@ -1,4 +1,5 @@
-import { fileURLToPath, URL } from 'node:url'
+import { URL, fileURLToPath } from 'node:url'
+import process from 'node:process'
 
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -7,8 +8,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import {
-  vueDsfrAutoimportPreset,
   ohVueIconAutoimportPreset,
+  vueDsfrAutoimportPreset,
   vueDsfrComponentResolver,
 } from '@gouvminint/vue-dsfr'
 
@@ -45,7 +46,8 @@ export default defineConfig({
     AutoImport({
       include: [
         /\.[tj]sx?$/,
-        /\.vue$/, /\.vue\?vue/,
+        /\.vue$/,
+        /\.vue\?vue/,
       ],
       imports: [
         'vue',

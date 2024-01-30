@@ -30,7 +30,7 @@ import { mount } from 'cypress/vue'
 // with a <reference path="./component" /> at the top of your spec.
 declare module 'cypress' {
   interface Chainable {
-    mount: typeof mount;
+    mount: typeof mount
   }
 }
 

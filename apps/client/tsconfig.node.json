@@ -1,5 +1,11 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node", "vitest"]
+  },
   "include": [
     "./env.d.ts",
     "src/**/*.ts",
@@ -9,11 +15,5 @@
     "cypress.config.*",
     "nightwatch.conf.*",
     "playwright.config.*"
-  ],
-  "compilerOptions": {
-    "composite": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "types": ["node", "vitest"]
-  }
+  ]
 }

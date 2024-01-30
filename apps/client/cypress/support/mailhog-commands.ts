@@ -3,7 +3,7 @@ import utf8 from 'utf8'
 
 let fakeMails = []
 
-const mhApiUrl = path => {
+function mhApiUrl(path) {
   const basePath = Cypress.config('mailHogUrl')
   return `${basePath}/api${path}`
 }
@@ -39,24 +39,24 @@ Cypress.Commands.add('getLastMail', (infos) => {
       ? mails.filter(mail => mail.Content.Headers.Subject[0] === infos.subject)
       : mails,
     )
-    .then(mails => {
+    .then((mails) => {
       return Array.isArray(mails) && mails.length > 0 ? mails[0] : mails
     })
 })
 
 Cypress.Commands.add('getSubject', { prevSubject: true }, (mail) => {
-  return cy.wrap(mail.Content.Headers).then((headers) => decodePrintable(headers.Subject[0]))
+  return cy.wrap(mail.Content.Headers).then(headers => decodePrintable(headers.Subject[0]))
 })
 
 Cypress.Commands.add('getBody', { prevSubject: true }, (mail) => {
-  return cy.wrap(mail.Content).its('Body').then(body => {
+  return cy.wrap(mail.Content).its('Body').then((body) => {
     return decodePrintable(body)
   })
 })
 
 Cypress.Commands.add('getValidationLink', { prevSubject: true }, (mail) => {
   // const mailBody = mail.Content.Body
-  return cy.wrap(mail.Content).its('Body').then(mailBody => {
+  return cy.wrap(mail.Content).its('Body').then((mailBody) => {
     const boundary = mailBody.substr(0, mailBody.indexOf('\n'))
     const parts = mailBody.split(boundary)
     const htmlPart = parts[1]
@@ -70,7 +70,7 @@ Cypress.Commands.add('getValidationLink', { prevSubject: true }, (mail) => {
 
 Cypress.Commands.add('getResetLink', { prevSubject: true }, (mail) => {
   // const mailBody = mail.Content.Body
-  return cy.wrap(mail.Content).its('Body').then(mailBody => {
+  return cy.wrap(mail.Content).its('Body').then((mailBody) => {
     const boundary = mailBody.substr(0, mailBody.indexOf('\n'))
     const parts = mailBody.split(boundary)
     const htmlPart = parts[1]
@@ -87,7 +87,7 @@ Cypress.Commands.add('getRecipients', { prevSubject: true }, (mail) => {
     .wrap(mail)
     .then((mail) => {
       return (mail.To || []).map(
-        (recipientObj) => `${recipientObj.Mailbox}@${recipientObj.Domain}`,
+        recipientObj => `${recipientObj.Mailbox}@${recipientObj.Domain}`,
       )
     })
 })
